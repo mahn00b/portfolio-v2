@@ -11,15 +11,14 @@ jobs:
   changesets-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout branch triggered by PR
         uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
           fetch-depth: 1
 
       - name: Fetch main branch to check for changesets
-        run: |
-          git fetch origin main
+        run: git fetch origin main
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -36,6 +35,5 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check Changesets
-        id: build
-        run: pnpm changeset:ci-check
+        run: pnpm changeset status --since origin/main
         continue-on-error: false

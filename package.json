@@ -11,7 +11,7 @@
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "changeset publish",
-    "changeset:ci-check": "changeset status --since=origin/main",
+    "changeset:ci-check": "changeset status --since=main",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
