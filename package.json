@@ -10,7 +10,6 @@
     "lint": "next lint",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "postinstall": "changeset update",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
