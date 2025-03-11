@@ -10,6 +10,7 @@
     "lint": "next lint",
     "changeset": "changeset",
     "changeset:version": "changeset version",
+    "changeset:ci-check": "changeset status --since=main",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
