@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { CONTACT_EMAIL } from "@/lib/constants"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -29,7 +30,7 @@ export default function ContactForm() {
     // Simulate form submission
     try {
       // In a real app, you'd make an API call here
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      open(`mailto:${CONTACT_EMAIL}?subject=${formData.subject}&body=${formData.message}`)
 
       // Reset form
       setFormData({

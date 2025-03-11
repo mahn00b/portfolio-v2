@@ -14,7 +14,7 @@ import SectionTitle from "@/components/section-title"
 import AnimatedText from "@/components/animated-text"
 import NavLink from "@/components/nav-link"
 import { motion } from "framer-motion"
-import { GITHUB_USERNAME, LINKEDIN_URL } from "@/lib/constants"
+import { GITHUB_USERNAME, LINKEDIN_URL, CONTACT_EMAIL } from "@/lib/constants"
 
 export default function Home() {
   return (
@@ -43,6 +43,12 @@ export default function Home() {
               <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
+              </Link>
+            </Button>
+            <Button asChild variant="ghost" size="icon">
+              <Link href={`mailto:${CONTACT_EMAIL}`} target="_blank" rel="noopener noreferrer">
+                <Mail className="h-5 w-5" />
+                <span className="sr-only">Email</span>
               </Link>
             </Button>
           </div>
@@ -259,20 +265,20 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-2xl font-medium mb-4">Contact Information</h3>
-              {/* <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <a
-                    href="mailto:your.email@example.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    your.email@example.com
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
-              </div> */}
+              </div>
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Github className="h-5 w-5 text-primary" />
@@ -323,23 +329,23 @@ export default function Home() {
       <footer className="border-t">
         <div className="container py-8 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-muted-foreground">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+            <p className="text-muted-foreground">© {new Date().getFullYear()} Mahmoud Yousif. All rights reserved.</p>
           </div>
           <div className="flex space-x-4">
             <Button asChild variant="ghost" size="icon">
-              <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <Link href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>
             <Button asChild variant="ghost" size="icon">
-              <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </Button>
             <Button asChild variant="ghost" size="icon">
-              <Link href="mailto:your.email@example.com">
+              <Link href={`mailto:${CONTACT_EMAIL}`} target="_blank" rel="noopener noreferrer">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>
